@@ -1,0 +1,120 @@
+/* 🌟 Fond de la page surprise */
+body {
+    background: rgba(255, 192, 203, 0.9); /* Rose clair semi-transparent */
+    color: #00796b; /* Texte en vert foncé */
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* 💖 Effet scintillant en fond */
+.sparkle-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, rgba(255, 255, 255, 0) 50%);
+    animation: sparkleEffect 5s infinite alternate;
+    z-index: -1;
+    pointer-events: none;
+}
+
+@keyframes sparkleEffect {
+    0% { opacity: 0.3; }
+    100% { opacity: 0.6; }
+}
+
+/* 💖 Cœurs flottants */
+#hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.heart {
+    position: absolute;
+    color: red;
+    font-size: 20px;
+    animation: floatUp linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(100vh) scale(0.5); opacity: 1; }
+    100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+}
+
+/* 🎁 Centrage du bouton */
+#reveal-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 25px;
+    font-size: 20px;
+    color: white;
+    background: #00796b; /* Couleur verte */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#reveal-button:hover {
+    background: #005f56;
+}
+
+/* 💖 Style du message */
+#hidden-message {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00796b;
+    text-align: center;
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.5s ease-in-out, transform 1s ease-in-out;
+}
+
+#hidden-message.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 🎥 Conteneur de la vidéo - Pour qu'elle apparaisse sous le message */
+#video-container {
+    text-align: center;
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.5s ease-in-out, transform 1s ease-in-out;
+    position: relative;
+    z-index: 2;
+    pointer-events: none; /* Désactive l'interaction tant que la vidéo n'est pas visible */
+}
+
+#video-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto; /* Réactive l'interaction après le clic */
+}
+
+/* 🎥 Style du lecteur vidéo */
+#couple-video {
+    width: 80%;
+    max-width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    object-fit: cover; /* Ajuste le cadrage */
+    pointer-events: none; /* Empêche l'interaction */
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jade-Elsysha Mon Amour</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <div id="login-screen">
+        <div id="error-box">
+            <p id="error-message">T'es pas mon amoureuse Mouf 🖕🏾</p>
+            <button onclick="closeError()">Ok</button>
+        </div>
+        
+        <div id="login-box">
+            <h2>Entre le mot de passe</h2>
+            <p>(Date à laquelle on s'est mis en couple)</p>
+            <input type="password" id="password-input" placeholder="Mot de passe">
+            <br>
+            <button onclick="checkPassword()">Valider</button>
+        </div>
+    </div>
+    
+    
+    <div class="container">
+        <h1>Jade-Elsysha, veux-tu être ma Valentine ?</h1>
+        <p>Tu es la personne la plus spéciale à mes yeux, et j’aimerais passer cette Saint-Valentin avec toi mon amour ❤️</p>
+        <div class="buttons">
+            <button class="btn yes" id="yes">Oui</button>
+
+            <button class="btn no" id="no" onmouseover="moveButton()">Non</button>
+        </div>
+        <br>
+        <a href="surprise.html">
+            <button id="gift-button" class="btn yes" style="display: none;">🎁 Ouvre mon cadeau</button>
+        </a>
+        
+    </div>
+    <script src="script.js"></script> 
+
+    
+    <div id="hearts-container"></div>
+    <div id="love-dialog">
+        <p>💖 T'avais intérêt, sinon je te tue 💖</p>
+        <button onclick="closeDialog()">🥰 Je t'aime mon amour💖</button>
+    </div>
+    <div id="gif-explosion"></div>
+    
+
+</body>
+</html>

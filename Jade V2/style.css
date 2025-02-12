@@ -1,0 +1,327 @@
+body {
+    text-align: center;
+    background-color: pink;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.container {
+    animation: fadeIn 2s ease-in-out;
+    display: none;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    
+}
+
+h1, p {
+    color: #009688;
+}
+
+.buttons {
+    position: relative; /* Permet aux boutons d'être bien positionnés */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: transform 0.3s, background-color 0.3s;
+    position: relative;
+}
+
+.yes {
+    background-color: #009688;
+    color: white;
+    transition: transform 0.5s ease-in-out;
+}
+
+.no {
+    background-color: #d32f2f;
+    color: white;
+    position: relative;
+    margin-top: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.btn:hover {
+    transform: scale(1.2);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+#login-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 192, 203, 0.9); /* Fond rose clair */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#login-box {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+#login-box h2 {
+    color: #009688;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+#login-box p {
+    color: #009688;
+    font-size: 14px;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+#password-input {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #009688;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+#login-box button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #009688;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#login-box button:hover {
+    background-color: #00796b;
+}
+#password-input {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #009688;
+    border-radius: 5px;
+}
+
+#login-screen button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #009688;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#login-screen button:hover {
+    background-color: #00796b;
+}
+#hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none; /* Ne bloque pas les interactions avec le reste de la page */
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) scale(1.5); /* Monte hors de l'écran */
+        opacity: 0;
+    }
+}
+
+/* S'assurer que les cœurs disparaissent bien après l'animation */
+.heart {
+    position: absolute;
+    bottom: 0;
+    color: red;
+    opacity: 0.8;
+    animation: floatUp 4s linear forwards;
+    cursor: pointer;
+    pointer-events: auto;
+    z-index: 1000;
+}
+
+
+
+
+
+#error-box {
+    position: fixed;
+    top: 25%; /* Avant c'était 50%, maintenant c'est plus haut */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: none; /* Caché par défaut */
+    z-index: 1000;
+}
+
+
+#error-message {
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#error-box button {
+    padding: 10px 15px;
+    background: #009688;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#error-box button:hover {
+    background: #00796b;
+}
+
+#love-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: none; /* Assure que la boîte est cachée au départ */
+    z-index: 1000;
+}
+/* Boîte de dialogue personnalisée */
+#love-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: none; /* Caché au début */
+    z-index: 1000;
+    font-size: 18px;
+    color: #d32f2f;
+}
+
+#love-dialog button {
+    padding: 10px 15px;
+    background: #009688;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#love-dialog button:hover {
+    background: #00796b;
+}
+
+/* Effet d’explosion */
+#gif-explosion {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+}
+
+.explosion-gif {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+    animation: explode 1s ease-out forwards;
+}
+
+@keyframes explode {
+    0% {
+        transform: scale(0.5);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(2); /* Grossit à 2x la taille */
+        opacity: 1;
+    }
+    100% {
+        transform: scale(3);
+        opacity: 0;
+    }
+}
+
+/* Effet d’explosion des cœurs */
+.explode {
+    animation: explode 1.5s ease-out forwards; /* Augmenté à 1.5s pour plus de visibilité */
+}
+
+/* Effet d’explosion des GIFs */
+.explosion-gif {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+    animation: explode 4s ease-out forwards; /* Augmenté à 4s */
+}
+
+
+
+#gift-button {
+    display: none; /* Caché par défaut */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 25px;
+    font-size: 20px;
+    color: white;
+    background: #00796b; /* Ajuste la couleur si besoin */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Effet d'apparition fluide */
+#gift-button.visible {
+    display: block;
+    opacity: 1;
+}
